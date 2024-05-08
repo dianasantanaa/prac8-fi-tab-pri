@@ -1,0 +1,14 @@
+body{/*indicamos el fondo de la pagina al igual de que estara centrado*/
+    text-align: center;
+    background-image: url(img/fond.webp);
+}
+.container{/*tendra un fondo borroso para mejor estilo*/
+    backdrop-filter: blur(20px);
+    width: auto;/*ancho del contenedor*/
+    height: 200px;/*alto del contenedor*/
+}
+h1{/*damos estilo al titulo principal*/
+    font-family: "Lugrasimo", cursive;/*tipo de letra*/
+    font-weight: 600px;/*ancho de letra*/
+    font-style: normal;/*estilo de letra*/
+}

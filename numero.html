@@ -1,0 +1,74 @@
+<!DOCTYPE html><!--informa al navegdor que version de HTML se ocupa-->
+<html lang="en"><!--se utiliza para comenzar a estructurar y el idioma-->
+<head><!--información general acerca del documento, incluyendo su título y
+    enlaces a scripts y hojas de estilos-->
+    <meta charset="UTF-8"><!--responsable de que se muestre el contenido correctamente y con caracteres-->
+    <!-- metaetiqueta mediante la que se establece si se puede hacer zoom en una página, el zoom inicial o 
+        la anchura de la pantalla del dispositivo-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>><!--se encarga de dale titulo a la pestaña de la pagina-->
+    <link rel="stylesheet" href="numero.css"><!--se enlaza una hoja de estilo-->
+<!--se enlaza a los estilos de letra de google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Dancing+Script:wght@400..700&family=Lugrasimo&family=Madimi+One&display=swap" rel="stylesheet">
+</head><!--se cierra la parte de la informacion general-->
+<body><!--se escribe el contenido que ira dentro de la pagina web-->
+<div class="container"><!--colocamos un contenedor para el numero-->
+    <h1>Número Primo</h1><!--colocamos el titulo principal-->
+<label for="number">Ingrese un número:</label><!--colocamos un texto indicando-->
+<input type="number" id="number"><!--colocamos en donde ingresar el numero-->
+<button onclick="checkPrime()">Comprobar</button><!--colocamos un boton para comprobar si el numero es primo o no-->
+<p id="result"></p><!--añadimos un parrafo con el resultado-->
+</div><!--terminamos el contenedor-->
+<script>//comenzamos el script para que funcione de manera correcta el programa
+    function isPrime(number) {//colocamos la funcion con el tipo number que indica ingresar numero
+        //aqui comenzamos a verrificar los numeros
+    if (number <= 1) {
+      return false;
+    }
+    if (number <= 3) {
+//verificamos si los datos ingresados es un numero par o impar
+  return true;
+    }
+    if (number % 2 === 0 || number % 3 === 0) {
+      return false;
+    }
+    
+  let i = 5;
+    while (i * i <= number) {
+      if (number % i === 0 || number % (i + 2) === 0) {
+        return false;
+      }
+      i += 6;
+    }
+    return true;
+  }
+  //checamos el numero y confome a eso damos la respuesta correcta 
+  function checkPrime() {
+    const userInput = document.getElementById('number').value;
+    const resultElement = document.getElementById('result');
+    //damos indicaciones para que el usurio ingrese el numero
+    if (userInput === '') {
+      resultElement.
+      resultElement
+  textContent = 'Por favor, ingrese un número.';
+      return;
+    }
+  
+    const number = parseInt(userInput);
+  //si no ingresa un numero entero entonces nos dara el siguiente mensaje
+    if (isNaN(number)) {
+      resultElement.textContent = 'Por favor, ingrese un número válido.';
+      return;
+    }
+  //si el numero es primo dara el siguiente mensaje
+    if (isPrime(number)) {
+      resultElement.textContent = `${number} es un número primo.`;
+    } else {//si el numero no es primo dara el siguiente mensaje
+      resultElement.textContent = `${number} no es un número primo.`;
+    }
+  }
+</script><!--se termina el script-->
+</body><!--se termina lo que ira dentro de la pagina web-->
+</html><!--fin de la estructura-->

@@ -1,0 +1,36 @@
+<!DOCTYPE html><!--informa al navegdor que version de HTML se ocupa-->
+<html lang="en"><!--se utiliza para comenzar a estructurar y el idioma-->
+<head><!--información general acerca del documento, incluyendo su título y
+    enlaces a scripts y hojas de estilos-->
+    <meta charset="UTF-8"><!--responsable de que se muestre el contenido correctamente y con caracteres-->
+    <!-- metaetiqueta mediante la que se establece si se puede hacer zoom en una página, el zoom inicial o 
+        la anchura de la pantalla del dispositivo-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas de Multiplicar</title><!--se encarga de dale titulo a la pestaña de la pagina-->
+</head><!--se cierra la parte de la informacion general-->
+<body> <!--se escribe el contenido que ira dentro de la pagina web-->
+    <div class="container"><!--se crea un contenedor para las tablas-->
+    <h1>Tablas de Multiplicar</h1><!--colocamos un titulo principal-->
+    <button id="btnTablas">Tablas de multiplicar</button><!--colocamos un boton para mostrar las tablas-->
+    <p id="tablas"></p><!--agregamos un parrafo para que nos muestre las tablas-->
+</div><!--cerramos el contenedor-->
+    <script>//colocamos el script para dar las funciones correspondientes
+        btnTablas.addEventListener("click", function(){//al boton le daremos la funcion 
+    document.write("<div class='tablas'>");
+        //hacemos que las multiplicaciones se realicen  hasta la tabla del 10
+for(let tabla =1; tabla <=10; tabla++){
+    //le daremos su espacio a las tablas
+    document.write("<strong> Tabla del: </strong>"+ tabla+"<br>");
+    //la forma en la que se multiplicaran es decir por que numeros 
+    for(let numero = 1; numero <= 10; numero ++){
+        //colocamos la estructura en la que ira llamando a la tabla por el nuemero
+        document.write(tabla+"x" + numero + "="+(tabla*numero)+"<br>");
+    }//nos dara el resultado
+    document.write("</div><br>");
+}//damos espacio y terminamos
+document.write("</div>");
+});
+    </script><!--se termina el script-->
+
+</body><!--se termina lo que ira dentro de la pagina web-->
+</html><!--fin de la estructura-->
